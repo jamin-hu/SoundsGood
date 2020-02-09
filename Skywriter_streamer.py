@@ -13,15 +13,13 @@ ser = serial.Serial('/dev/rfcomm2', 9600)
 
 @skywriter.move()
 def move(x, y, z):
-    # print("Z = " + str(z))
-    # print("New Fs = " + str(fs))
-    
+
     global ser
-    
+
     data_stream = (str(x) + ' ' + str(y) + ' ' + str(z) + '\n').encode()
-    
+
     ser.write(data_stream)
-    
+
 
 @skywriter.flick()
 def flick(start,finish):
